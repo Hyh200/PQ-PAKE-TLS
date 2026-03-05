@@ -1,0 +1,33 @@
+% Kyber768 CPA-PKE wrapped as KEM (PKE->KEM)
+\begin{figure}[htb]
+\centering
+\fbox{\begin{minipage}{0.94\textwidth}
+\vspace{0.6em}
+\textbf{Client (password-derived) keypair:}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.88\textwidth][c]{\strut $\textsf{seed}\leftarrow\textsf{SHAKE256}(\texttt{label}||pw)$;\ \ $(pk_c,sk_c)\leftarrow\textsf{NewKeyFromSeed}(\textsf{seed})$}}
+\\[1.0em]
+\textbf{Public key (\texttt{PublicKeySize} bytes):}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.55\textwidth][c]{\strut packed pk}}
+\\[1.0em]
+\textbf{Private key (\texttt{PrivateKeySize} bytes):}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.55\textwidth][c]{\strut packed sk}}
+\\[1.0em]
+\textbf{Encapsulation (PKE$\to$KEM):}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.88\textwidth][c]{\strut sample $k\in\{0,1\}^{256}$ and coins;\ $ct\leftarrow\textsf{Enc}(pk,k;\textsf{coins})$;\ $ss:=k$}}
+\\[1.0em]
+\textbf{Ciphertext (\texttt{CiphertextSize} bytes):}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.55\textwidth][c]{\strut packed ct}}
+\\[1.0em]
+\textbf{Shared key (32 bytes):}
+\\[0.4em]
+\hspace*{1.0em}\fbox{\makebox[0.30\textwidth][c]{\strut $ss=k$}}
+\vspace{0.6em}
+\end{minipage}}
+\caption{Structure of the password-derived Kyber768 CPA-PKE based KEM (PKE$\to$KEM).}
+\label{fig:kyberpke-kem-layout}
+\end{figure}
