@@ -7,10 +7,6 @@
 - 客户端/服务端独立程序
 - 与传统 TLS1.3（ECDHE）对比实验
 
-> 当前 `PQ-PAKE-TLS - 1` 版本中，协议握手口径为：
-> **Init（注册阶段处理） + Stage1 + Stage2 + Stage3 + Stage4**。
-> 不再把外层 `tls.Handshake()` 作为 PQ-PAKE-TLS 的独立计时阶段。
-
 ---
 
 ## 1. 环境要求
